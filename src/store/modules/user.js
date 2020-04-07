@@ -1,6 +1,6 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
-import router, { resetRouter } from '@/router'
+import router, { resetRouter, asyncRoutes, constantRoutes } from '@/router'
 
 const state = {
   token: getToken(),
@@ -19,6 +19,9 @@ const mutations = {
   },
   SET_NAME: (state, name) => {
     state.name = name
+  },
+  SET_PERMISSION_ROUTES: (state, permission_routes) => {
+    state.permission_routes = permission_routes
   },
   SET_AVATAR: (state, avatar) => {
     state.avatar = avatar
